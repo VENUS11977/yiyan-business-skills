@@ -1,0 +1,7 @@
+interface:
+  display_name: "yiyan-psychology-support"
+  short_description: "一炎心理学辅助，拆分认知、情绪和行动但不做临床诊断"
+  default_prompt: "使用 $yiyan-psychology-support，用教育性心理框架帮我把这件事拆清楚。"
+
+policy:
+  allow_implicit_invocation: true

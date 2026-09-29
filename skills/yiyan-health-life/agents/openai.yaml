@@ -1,0 +1,7 @@
+interface:
+  display_name: "yiyan-health-life"
+  short_description: "一炎健康生活，建立支持长期经营的睡眠、饮食、活动与恢复"
+  default_prompt: "使用 $yiyan-health-life，帮我设计一个不极端、能支持长期工作的生活调整方案。"
+
+policy:
+  allow_implicit_invocation: true

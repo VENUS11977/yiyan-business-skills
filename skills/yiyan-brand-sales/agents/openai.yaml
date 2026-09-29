@@ -1,0 +1,7 @@
+interface:
+  display_name: "yiyan-brand-sales"
+  short_description: "一炎个人品牌与私域销售，建立信任、筛选客户和清晰成交路径"
+  default_prompt: "使用 $yiyan-brand-sales，帮我把定位、主页、私信筛选和成交路径设计清楚。"
+
+policy:
+  allow_implicit_invocation: true

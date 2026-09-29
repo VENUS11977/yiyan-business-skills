@@ -1,0 +1,7 @@
+interface:
+  display_name: "yiyan-business-operations"
+  short_description: "一炎交付与经营运营，建立 SOP、容量管理和复盘看板"
+  default_prompt: "使用 $yiyan-business-operations，帮我检查交付流程、容量和经营指标哪里漏水。"
+
+policy:
+  allow_implicit_invocation: true

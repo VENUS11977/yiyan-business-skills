@@ -1,0 +1,7 @@
+interface:
+  display_name: "yiyan-mind-system"
+  short_description: "一炎心力与执行系统，处理拖延、过载、边界和恢复节奏"
+  default_prompt: "使用 $yiyan-mind-system，帮我把当前的拖延或过载拆成今天能执行的一步。"
+
+policy:
+  allow_implicit_invocation: true

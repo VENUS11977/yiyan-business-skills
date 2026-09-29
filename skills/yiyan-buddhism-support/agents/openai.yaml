@@ -1,0 +1,7 @@
+interface:
+  display_name: "yiyan-buddhism-support"
+  short_description: "一炎佛学辅助，用正命、无常和自主性反思经营与生活选择"
+  default_prompt: "使用 $yiyan-buddhism-support，从佛学辅助视角反思这项经营选择，同时区分教义和个人理解。"
+
+policy:
+  allow_implicit_invocation: true

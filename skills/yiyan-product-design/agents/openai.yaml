@@ -1,0 +1,7 @@
+interface:
+  display_name: "yiyan-product-design"
+  short_description: "一炎产品与服务设计，明确定位、交付成果、定价和边界"
+  default_prompt: "使用 $yiyan-product-design，帮我把现有能力设计成一个范围清楚、可以交付和验证的产品。"
+
+policy:
+  allow_implicit_invocation: true
