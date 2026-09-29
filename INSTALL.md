@@ -29,6 +29,8 @@ npx -y skills add VENUS11977/yiyan-business-skills --skill yiyan-business -g
 如果你已经把仓库下载到本地，可以运行：
 
 ```bash
+git clone https://github.com/VENUS11977/yiyan-business-skills.git
+cd yiyan-business-skills
 bash scripts/install-universal.sh
 ```
 
@@ -51,6 +53,8 @@ bash scripts/install-universal.sh
 在仓库根目录运行：
 
 ```powershell
+git clone https://github.com/VENUS11977/yiyan-business-skills.git
+cd yiyan-business-skills
 powershell -ExecutionPolicy Bypass -File .\scripts\install-universal.ps1
 ```
 

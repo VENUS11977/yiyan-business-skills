@@ -44,12 +44,16 @@ npx -y skills add VENUS11977/yiyan-business-skills --skill yiyan-business -g
 macOS／Linux：
 
 ```bash
+git clone https://github.com/VENUS11977/yiyan-business-skills.git
+cd yiyan-business-skills
 bash scripts/install-universal.sh
 ```
 
 Windows PowerShell：
 
 ```powershell
+git clone https://github.com/VENUS11977/yiyan-business-skills.git
+cd yiyan-business-skills
 powershell -ExecutionPolicy Bypass -File .\scripts\install-universal.ps1
 ```
 
