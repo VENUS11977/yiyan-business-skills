@@ -1,7 +1,7 @@
 interface:
   display_name: "yiyan-business-self-study"
-  short_description: "一炎商业与自媒体总入口，按问题选择最合适的独立 Skill"
-  default_prompt: "使用 $yiyan-business-self-study，展示入口或根据我的基础、卡点和目标推荐一个主 Skill。"
+  short_description: "一炎商业与自媒体总入口，展示分类并判断当前最合适的入口"
+  default_prompt: "使用 $yiyan-business-self-study，先展示全部入口；如果我不知道怎么选，就根据我的阶段、证据、瓶颈和目标推荐一个主入口。"
 
 policy:
   allow_implicit_invocation: true

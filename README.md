@@ -1,6 +1,8 @@
 # 一炎商业与自媒体 Skills
 
-一套面向商业、轻资产创业和自媒体实践的中文 AI Skill 集合。它把不同任务拆成独立入口：你可以先让总入口判断，也可以直接进入具体入口。
+一套以商业与轻资产创业为主轴、以自媒体和经营闭环为核心、以心力／心理学／佛学／健康生活为支持层的中文 AI Skill 集合。
+
+整套系统由 **1 个总判断入口 + 9 个独立分类入口** 组成。你可以让总入口根据当前阶段和瓶颈选择入口，也可以直接进入某一分类。它不是把一本教材塞进提示词，而是按当前任务逐步加载相关理论、工作表和边界。
 
 本项目免费开源，采用 MIT License。内容是通用的教育与决策框架，不承诺收入、流量、成交或投资结果。
 
@@ -8,16 +10,38 @@
 
 | 入口 | 用途 |
 |---|---|
-| `yiyan-business-self-study` | 总入口：根据目标、基础和卡点分流到合适入口 |
-| `yiyan-business` | 商业与轻资产创业：资源盘点、方向筛选、现金流和小实验 |
-| `yiyan-product-design` | 产品与服务设计：对象、问题、交付结果、产品阶梯和定价逻辑 |
-| `yiyan-content-system` | 自媒体与内容系统：定位、栏目、选题、脚本、直播和复盘 |
-| `yiyan-brand-sales` | 个人品牌、私域与销售：主页、信任证据、筛选、成交和转介绍 |
-| `yiyan-business-operations` | 交付、运营与经营看板：SOP、容量、有效时薪、退款和复盘 |
-| `yiyan-mind-system` | 心力与执行系统：拖延、过载、边界、恢复和最小行动 |
-| `yiyan-psychology-support` | 心理学辅助：事实、解释、认知偏差、情绪调节和行动 |
-| `yiyan-buddhism-support` | 佛学辅助：正命、因缘、无常、执著、慈悲与自主性 |
-| `yiyan-health-life` | 健康生活：睡眠、饮食、活动、户外和信息边界的通用建议 |
+| `yiyan-business-self-study` | 总入口：展示所有入口，或根据阶段、证据、瓶颈和期望交付物选择一个主入口 |
+| `yiyan-business` | 商业与轻资产创业：方向探索、商业模型、资源与能力、现金流、可逆实验和停止条件 |
+| `yiyan-product-design` | 产品与服务设计：客户任务、价值主张、服务蓝图、产品阶梯、定价和验证 |
+| `yiyan-content-system` | 自媒体与内容系统：受众情境、内容战略、栏目选题、多形式生产、资产化和数据实验 |
+| `yiyan-brand-sales` | 个人品牌、私域与销售：定位、证据、客户旅程、适配筛选、会谈、跟进和转介绍 |
+| `yiyan-business-operations` | 交付、运营与经营看板：流程、SOP、质量、容量、单位经济、售后和周期复盘 |
+| `yiyan-mind-system` | 心力与执行系统：任务、能力、动机、环境、容量和恢复六维诊断 |
+| `yiyan-psychology-support` | 心理学辅助：非临床问题建模、认知与行为工具、价值、情绪和低风险实验 |
+| `yiyan-buddhism-support` | 佛学辅助：原典分层、正命、业与因缘、无常、执著、慈悲、在家伦理和修习反思 |
+| `yiyan-health-life` | 健康生活：7 天基线、睡眠、饮食、活动、久坐、工作方式、信息边界与恢复 |
+
+## 系统怎样工作
+
+商业链路是：
+
+```text
+战略选择 → 产品与价值 → 内容与需求 → 信任与成交 → 交付与学习
+```
+
+心力、心理学、佛学与健康生活负责支持经营者的行动、判断、伦理和长期产能。它们不会替代客户证据、现金流、合规要求、医疗或心理治疗。
+
+每个入口的 `SKILL.md` 只保留路由、核心流程和停止条件；详细理论、工作表与来源放在 `references/` 中，由 AI 根据任务按需读取。这样既保留体系深度，也避免一次加载全部材料造成混乱。
+
+## 知识与证据怎么区分
+
+本项目把内容分为不同证据层，不混写成“一炎说过”或“某个理论已经证明”：
+
+- **一炎原始材料与个人经验**：保留其方法、案例和体系语言，并明确适用范围；
+- **外部理论与研究**：优先采用原始论文、权威机构与经典理论，只保留能改变判断或行动的部分；
+- **佛教材料**：区分佛教原典、传统解释、个人修学与现代经营转译；
+- **现实经营假设**：必须通过客户行为、交易、交付和复盘继续验证；
+- **象征与主观体验**：可以启发观察，不能替代市场、医学或因果证据。
 
 ## 安装
 
@@ -57,7 +81,7 @@ cd yiyan-business-skills
 powershell -ExecutionPolicy Bypass -File .\scripts\install-universal.ps1
 ```
 
-本地安装器会把入口复制到通用的 `~/.agents/skills/`（Windows 为 `$HOME\.agents\skills\`），并生成一个 `yiyan-business-skills-import` 导入包。豆包、DeepSeek、ChatGPT 自定义 GPT 等平台需要把导入包中的 `SKILL.md` 放到平台提供的智能体提示词、系统指令、项目规则或知识库中；平台没有这些入口时，无法由外部脚本代替平台完成安装。
+本地安装器会把入口复制到通用的 `~/.agents/skills/`（Windows 为 `$HOME\.agents\skills\`），并生成一个 `yiyan-business-skills-import` 导入包。导入包的 `standalone/` 目录会把每个入口的 `SKILL.md` 与 `references/` 合并成单文件完整版，适合豆包、DeepSeek、ChatGPT 自定义 GPT 等网页平台。平台没有自定义指令或知识库入口时，外部脚本无法代替平台完成安装。
 
 ## 使用
 
@@ -77,14 +101,16 @@ $yiyan-business
 
 在不支持 `$skill-name` 调用的客户端里，把对应目录的 `SKILL.md` 内容复制到系统提示词、项目规则或知识库中即可。
 
+总入口只负责判断和生成调用提示词，不会给出一个缩减版的商业答案。进入分类入口后，该入口会根据任务读取自己的 `references/`；一般不需要用户手动挑选参考文件。
+
 ## 不同 AI 平台的使用方式
 
 “能使用这套 Skill”和“有统一的一键安装器”是两回事：
 
 - 支持 Agent Skills 格式的客户端：使用上面的 `npx skills add` 命令。
-- ChatGPT 自定义 GPT：没有跨账号通用的一键安装命令；将需要的 `SKILL.md` 上传或复制到 GPT 的 Instructions／知识中。
-- Gemini、Claude 的网页端，以及豆包、DeepSeek 等平台：如果平台提供系统提示词、项目规则或知识库功能，手动导入对应 `SKILL.md`；平台不支持时无法强行启用 Skill 机制。
-- 普通聊天界面：下载仓库后，复制一个入口的 `SKILL.md` 到对话开头或自定义指令中。想使用多个入口时，建议先导入 `yiyan-business-self-study`，再按它的判断导入具体入口。
+- ChatGPT 自定义 GPT：没有跨账号通用的一键安装命令；上传安装器生成的对应 `standalone/*.md` 到 Instructions／知识中。
+- Gemini、Claude 的网页端，以及豆包、DeepSeek 等平台：如果平台提供系统提示词、项目规则或知识库功能，手动导入对应单文件完整版；平台不支持时无法强行启用 Skill 机制。
+- 普通聊天界面：把一个单文件完整版放到对话开头。想使用多个入口时，建议先导入 `yiyan-business-self-study.md`，再按它的判断导入具体分类文件。
 
 因此，本项目提供的是跨平台可迁移的 Markdown Skill 内容，不宣称所有平台都能原生识别或自动安装。
 
@@ -101,8 +127,13 @@ $yiyan-business
 yiyan-business-skills/
 ├── README.md
 ├── LICENSE
+├── manifest.json
+├── INSTALL.md
 └── skills/
     ├── yiyan-business-self-study/
+    │   ├── SKILL.md
+    │   ├── agents/openai.yaml
+    │   └── references/
     ├── yiyan-business/
     ├── yiyan-product-design/
     ├── yiyan-content-system/
@@ -112,6 +143,14 @@ yiyan-business-skills/
     ├── yiyan-psychology-support/
     ├── yiyan-buddhism-support/
     └── yiyan-health-life/
+```
+
+本地安装器还会在仓库外生成：
+
+```text
+yiyan-business-skills-import/
+├── skills/       # 保留标准目录结构
+└── standalone/   # 适合网页 AI 的单文件完整版
 ```
 
 ## 反馈与贡献

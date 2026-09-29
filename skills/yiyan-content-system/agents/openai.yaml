@@ -1,7 +1,7 @@
 interface:
   display_name: "yiyan-content-system"
-  short_description: "一炎自媒体内容系统，设计定位、栏目、脚本、直播和复盘"
-  default_prompt: "使用 $yiyan-content-system，帮我把一个明确选题做成可发布、可复用、可复盘的内容。"
+  short_description: "一炎自媒体内容系统，连接受众、表达、生产、资产与数据实验"
+  default_prompt: "使用 $yiyan-content-system，帮我根据受众情境和内容任务，设计一套可发布、可复用、可复盘的内容方案。"
 
 policy:
   allow_implicit_invocation: true

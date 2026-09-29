@@ -6,13 +6,14 @@ repo_root="$(CDPATH= cd -- "$script_dir/.." && pwd)"
 source_root="$repo_root/skills"
 target_root="${YIYAN_SKILLS_HOME:-${HOME}/.agents/skills}"
 import_root="${YIYAN_IMPORT_HOME:-${HOME}/yiyan-business-skills-import}"
+standalone_root="$import_root/standalone"
 
 if [[ ! -d "$source_root" ]]; then
   echo "错误：找不到 Skill 目录：$source_root" >&2
   exit 1
 fi
 
-mkdir -p "$target_root" "$import_root/skills"
+mkdir -p "$target_root" "$import_root/skills" "$standalone_root"
 
 installed=0
 for source_dir in "$source_root"/*; do
@@ -29,6 +30,18 @@ for source_dir in "$source_root"/*; do
       cp "$source_file" "$target_dir/$relative"
       cp "$source_file" "$import_dir/$relative"
     done
+
+  standalone_file="$standalone_root/$name.md"
+  cp "$source_dir/SKILL.md" "$standalone_file"
+  if [[ -d "$source_dir/references" ]]; then
+    while IFS= read -r -d '' reference_file; do
+      relative_reference="${reference_file#"$source_dir/"}"
+      {
+        printf '\n\n---\n\n# 导入参考：%s\n\n' "$relative_reference"
+        sed '1s/^# /## /' "$reference_file"
+      } >> "$standalone_file"
+    done < <(find "$source_dir/references" -type f -name '*.md' -print0 | sort -z)
+  fi
   installed=$((installed + 1))
 done
 
@@ -42,8 +55,10 @@ cat > "$import_root/README.txt" <<'EOF'
   npx -y skills add VENUS11977/yiyan-business-skills -g --all
 
 豆包、DeepSeek、ChatGPT 等平台：
-  先导入 skills/yiyan-business-self-study/SKILL.md；
-  再按需要导入具体分类目录中的 SKILL.md。
+  优先导入 standalone/yiyan-business-self-study.md；
+  再按需要导入 standalone/ 中的具体分类单文件。
+
+standalone/ 已把每个入口的 SKILL.md 与 references 合并，适合只能导入单个文件的平台。
 
 详细说明请阅读 INSTALL.md。
 EOF

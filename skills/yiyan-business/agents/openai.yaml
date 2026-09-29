@@ -1,7 +1,7 @@
 interface:
   display_name: "yiyan-business"
-  short_description: "一炎商业与轻资产创业，设计可验证的业务方向和小实验"
-  default_prompt: "使用 $yiyan-business，帮我把一个商业想法拆成可验证、可停止的轻资产实验。"
+  short_description: "一炎商业与轻资产创业，筛选方向、诊断模式并验证真实需求"
+  default_prompt: "使用 $yiyan-business，帮我判断现在适合做什么，并把最值得验证的方向设计成可停止的轻资产实验。"
 
 policy:
   allow_implicit_invocation: true

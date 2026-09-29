@@ -46,6 +46,8 @@ bash scripts/install-universal.sh
 ~/yiyan-business-skills-import/
 ```
 
+其中 `standalone/` 目录是网页 AI 优先使用的单文件完整版：每个文件已经合并该入口的 `SKILL.md` 与全部 `references/`，不会丢失理论、工作表和安全边界。
+
 本地安装器只处理文件，不会登录任何 AI 平台，也不会修改真实目录中已有的其他 Skill。
 
 ## C. Windows PowerShell
@@ -70,23 +72,27 @@ $HOME\.agents\skills\
 $HOME\yiyan-business-skills-import\
 ```
 
+优先使用其中的 `standalone\` 目录；一个分类只需导入一个 Markdown 文件。
+
 ## D. 豆包、DeepSeek、ChatGPT 自定义 GPT 等
 
-这些平台通常没有统一的 `npx` Skill 安装器。建议先导入总入口：
+这些平台通常没有统一的 `npx` Skill 安装器。如果已经运行本地安装器，建议先导入总入口的单文件完整版：
 
 ```text
-skills/yiyan-business-self-study/SKILL.md
+standalone/yiyan-business-self-study.md
 ```
 
 操作顺序：
 
-1. 在仓库中打开对应的 `SKILL.md`，点击 Raw；
-2. 复制全文；
-3. 粘贴到平台的“智能体提示词”“自定义指令”“系统提示词”“项目规则”或知识库；
+1. 把单文件完整版上传到平台知识库，或复制到“智能体提示词”“自定义指令”“系统提示词”“项目规则”；
+2. 如果平台允许多个知识文件，也可以上传原目录中的 `SKILL.md` 和 `references/`；
+3. 不要只上传原始 `SKILL.md` 后遗漏 `references/`，否则新版理论和工作表无法按需读取；
 4. 新建对话测试分流；
-5. 需要具体工作时，再导入对应分类入口，例如 `yiyan-business/SKILL.md`。
+5. 需要具体工作时，再导入 `standalone/` 中对应的分类入口，例如 `yiyan-business.md`。
 
-如果平台没有持久化配置入口，就把 `SKILL.md` 放在新对话的第一条消息中，并在后面提出任务。
+如果平台没有持久化配置入口，就把单文件完整版放在新对话的第一条消息中，并在后面提出任务。
+
+如果没有命令行，可以下载仓库 ZIP。平台允许多文件知识库时，上传某个分类目录中的 `SKILL.md` 与 `references/`；平台只能粘贴一段文字时，需要把这两部分合并后使用。外部脚本无法绕过平台本身的文件数量或字符限制。
 
 测试总入口：
 
@@ -103,7 +109,9 @@ skills/yiyan-business-self-study/SKILL.md
 - 不能保证不同平台对同一段 Markdown 的调用方式完全一致；
 - 不能把“成功复制文件”说成“平台已经原生支持 Skill”。
 
-## 入口文件链接
+## 入口主文件链接
+
+下面是各入口的主文件，适合支持 Agent Skills 或能同时读取相对 `references/` 的工具。网页 AI 若只能导入一个文件，请使用安装器生成的 `standalone/` 版本；只复制这些主文件会缺少详细参考。
 
 - [总入口](https://raw.githubusercontent.com/VENUS11977/yiyan-business-skills/main/skills/yiyan-business-self-study/SKILL.md)
 - [商业与轻资产创业](https://raw.githubusercontent.com/VENUS11977/yiyan-business-skills/main/skills/yiyan-business/SKILL.md)

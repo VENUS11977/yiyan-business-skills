@@ -1,6 +1,6 @@
 {
   "name": "yiyan-business-skills",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "repository": "https://github.com/VENUS11977/yiyan-business-skills",
   "license": "MIT",
   "language": "zh-CN",
@@ -28,7 +28,8 @@
     "web_ai": {
       "install": "manual_import",
       "guide": "INSTALL.md",
-      "note": "需要平台提供智能体、系统提示词、项目规则或知识库入口"
+      "generated_bundle": "standalone/<skill-name>.md",
+      "note": "本地安装器把 SKILL.md 与 references 合并为单文件；平台仍需提供智能体、系统提示词、项目规则或知识库入口"
     }
   }
 }
