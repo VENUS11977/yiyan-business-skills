@@ -24,16 +24,16 @@
 如果你使用支持 Agent Skills 的客户端（例如 Codex、Claude Code、Gemini CLI、Cursor 等），可以安装整个集合：
 
 ```bash
-npx -y skills add <你的GitHub用户名>/yiyan-business-skills -g --all
+npx -y skills add VENUS11977/yiyan-business-skills -g --all
 ```
 
 也可以只安装一个入口（以安装商业入口为例）：
 
 ```bash
-npx -y skills add <你的GitHub用户名>/yiyan-business-skills --skill yiyan-business -g
+npx -y skills add VENUS11977/yiyan-business-skills --skill yiyan-business -g
 ```
 
-把 `<你的GitHub用户名>` 替换为本仓库实际的 GitHub owner。若使用发布者提供的仓库链接，也可以直接复制发布者给出的完整命令。
+如果仓库被 fork 到其他 GitHub owner 下，请将 `VENUS11977` 替换为 fork 后的 owner；直接使用本仓库时无需修改命令。
 
 ## 使用
 
