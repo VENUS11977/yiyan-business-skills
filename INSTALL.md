@@ -24,6 +24,8 @@ npx -y skills add VENUS11977/yiyan-business-skills --skill yiyan-business -g
 
 安装完成后，重启客户端或重新加载项目规则，再调用对应入口。
 
+安装器会尝试为多个已识别 Agent 建立入口。Eve、PromptScript 等不支持全局 Skill 的客户端可能显示 `does not support global skill installation`；这是对应客户端能力限制。只要输出包含 `Installed 10 skills`，且 `~/.agents/skills/` 中存在 10 个 `yiyan-*` 目录，标准安装即已完成。
+
 ## B. 本地安装器（macOS／Linux）
 
 如果你已经把仓库下载到本地，可以运行：

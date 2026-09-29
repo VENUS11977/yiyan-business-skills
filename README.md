@@ -57,6 +57,8 @@ npx -y skills add VENUS11977/yiyan-business-skills -g --all
 npx -y skills add VENUS11977/yiyan-business-skills --skill yiyan-business -g
 ```
 
+`-g --all` 会让安装器尝试当前版本识别到的多个 Agent。个别客户端如果本身不支持全局 Skill，可能显示类似 `does not support global skill installation` 的提示；这不代表整套安装失败。以输出中出现 `Installed 10 skills`，并且 `~/.agents/skills/` 下能看到 10 个 `yiyan-*` 目录为准。
+
 如果仓库被 fork 到其他 GitHub owner 下，请将 `VENUS11977` 替换为 fork 后的 owner；直接使用本仓库时无需修改命令。
 
 ## 统一安装器与平台导入
