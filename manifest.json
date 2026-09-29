@@ -1,0 +1,34 @@
+{
+  "name": "yiyan-business-skills",
+  "version": "1.1.0",
+  "repository": "https://github.com/VENUS11977/yiyan-business-skills",
+  "license": "MIT",
+  "language": "zh-CN",
+  "skills": [
+    "yiyan-business-self-study",
+    "yiyan-business",
+    "yiyan-product-design",
+    "yiyan-content-system",
+    "yiyan-brand-sales",
+    "yiyan-business-operations",
+    "yiyan-mind-system",
+    "yiyan-psychology-support",
+    "yiyan-buddhism-support",
+    "yiyan-health-life"
+  ],
+  "integration_modes": {
+    "agent_skills": {
+      "install": "npx -y skills add VENUS11977/yiyan-business-skills -g --all",
+      "tested": true
+    },
+    "local_agents": {
+      "install_macos_linux": "bash scripts/install-universal.sh",
+      "install_windows": "powershell -ExecutionPolicy Bypass -File .\\scripts\\install-universal.ps1"
+    },
+    "web_ai": {
+      "install": "manual_import",
+      "guide": "INSTALL.md",
+      "note": "需要平台提供智能体、系统提示词、项目规则或知识库入口"
+    }
+  }
+}

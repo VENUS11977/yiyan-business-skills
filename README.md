@@ -35,6 +35,26 @@ npx -y skills add VENUS11977/yiyan-business-skills --skill yiyan-business -g
 
 如果仓库被 fork 到其他 GitHub owner 下，请将 `VENUS11977` 替换为 fork 后的 owner；直接使用本仓库时无需修改命令。
 
+## 统一安装器与平台导入
+
+想查看所有平台的安装方式，请阅读 [INSTALL.md](INSTALL.md)。
+
+已经下载仓库的用户，可以运行本地安装器：
+
+macOS／Linux：
+
+```bash
+bash scripts/install-universal.sh
+```
+
+Windows PowerShell：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\install-universal.ps1
+```
+
+本地安装器会把入口复制到通用的 `~/.agents/skills/`（Windows 为 `$HOME\.agents\skills\`），并生成一个 `yiyan-business-skills-import` 导入包。豆包、DeepSeek、ChatGPT 自定义 GPT 等平台需要把导入包中的 `SKILL.md` 放到平台提供的智能体提示词、系统指令、项目规则或知识库中；平台没有这些入口时，无法由外部脚本代替平台完成安装。
+
 ## 使用
 
 安装后，先使用总入口：
